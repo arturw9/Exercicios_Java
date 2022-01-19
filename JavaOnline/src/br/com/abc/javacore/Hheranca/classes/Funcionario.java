@@ -1,20 +1,34 @@
 package br.com.abc.javacore.Hheranca.classes;
 
-public class Funcionario  extends Pessoa{
+public class Funcionario extends Pessoa {
 
     private double salario;
 
-    public Funcionario(String nome){
-        super(nome);
+    {
+        System.out.println("Bloco de inicialização de funcionario 1");
     }
-    public void imprime(){
+
+    {
+        System.out.println("Bloco de inicialização de funcionario 2");
+    }
+
+    static {
+        System.out.println("Bloco de inicialização static de funcionario 1");
+    }
+
+    public Funcionario(String nome) {
+        super(nome);
+        System.out.println("Dentro do construtor de funcionario");
+    }
+
+    public void imprime() {
         super.imprime();
-        System.out.println("Salário: "+this.salario);
+        System.out.println("Salário: " + this.salario);
         imprimeReciboPagamento();
     }
 
-    public void imprimeReciboPagamento(){
-        System.out.println("Eu "+super.nome+" recebi o pagamento de "+this.salario);
+    public void imprimeReciboPagamento() {
+        System.out.println("Eu " + super.nome + " recebi o pagamento de " + this.salario);
     }
 
     public double getSalario() {
